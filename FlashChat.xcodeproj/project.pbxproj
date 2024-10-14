@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		6E7CF3B82CBD432400556C52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3B72CBD432400556C52 /* AppDelegate.swift */; };
-		6E7CF3BA2CBD432400556C52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3B92CBD432400556C52 /* SceneDelegate.swift */; };
-		6E7CF3BC2CBD432400556C52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3BB2CBD432400556C52 /* ViewController.swift */; };
-		6E7CF3BF2CBD432400556C52 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF3BE2CBD432400556C52 /* Base */; };
+		6E7CF3BC2CBD432400556C52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */; };
 		6E7CF3C12CBD432500556C52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF3C02CBD432500556C52 /* Assets.xcassets */; };
 		6E7CF3C42CBD432500556C52 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF3C32CBD432500556C52 /* Base */; };
+		6E7CF3D32CBD44FE00556C52 /* VCPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3D22CBD44FE00556C52 /* VCPreview.swift */; };
+		6E7CF3D62CBD45D400556C52 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3D52CBD45D400556C52 /* UIColor+Extensions.swift */; };
+		6E7CF3D82CBD45EC00556C52 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3D72CBD45EC00556C52 /* UIStackView+Extensions.swift */; };
+		6E7CF3DA2CBD4FEA00556C52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3D92CBD4FEA00556C52 /* RegisterViewController.swift */; };
+		6E7CF3DC2CBD502A00556C52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3DB2CBD502A00556C52 /* LoginViewController.swift */; };
+		6E7CF3DE2CBD503B00556C52 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3DD2CBD503B00556C52 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E7CF3B42CBD432400556C52 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7CF3B72CBD432400556C52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E7CF3B92CBD432400556C52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E7CF3BB2CBD432400556C52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6E7CF3BE2CBD432400556C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		6E7CF3C02CBD432500556C52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E7CF3C32CBD432500556C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E7CF3C52CBD432500556C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E7CF3D22CBD44FE00556C52 /* VCPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPreview.swift; sourceTree = "<group>"; };
+		6E7CF3D52CBD45D400556C52 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		6E7CF3D72CBD45EC00556C52 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		6E7CF3D92CBD4FEA00556C52 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6E7CF3DB2CBD502A00556C52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6E7CF3DD2CBD503B00556C52 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,83 @@
 		6E7CF3B62CBD432400556C52 /* FlashChat */ = {
 			isa = PBXGroup;
 			children = (
+				6E7CF3CB2CBD448F00556C52 /* Application */,
+				6E7CF3CC2CBD44A200556C52 /* Models */,
+				6E7CF3CE2CBD44B700556C52 /* Views */,
+				6E7CF3CD2CBD44A800556C52 /* Controllers */,
+				6E7CF3CF2CBD44C400556C52 /* Services */,
+				6E7CF3D02CBD44CD00556C52 /* Extensions */,
+				6E7CF3D12CBD44DD00556C52 /* Resources */,
+				6E7CF3D22CBD44FE00556C52 /* VCPreview.swift */,
+			);
+			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		6E7CF3CB2CBD448F00556C52 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				6E7CF3B72CBD432400556C52 /* AppDelegate.swift */,
-				6E7CF3B92CBD432400556C52 /* SceneDelegate.swift */,
-				6E7CF3BB2CBD432400556C52 /* ViewController.swift */,
-				6E7CF3BD2CBD432400556C52 /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6E7CF3CC2CBD44A200556C52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6E7CF3CD2CBD44A800556C52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */,
+				6E7CF3D92CBD4FEA00556C52 /* RegisterViewController.swift */,
+				6E7CF3DB2CBD502A00556C52 /* LoginViewController.swift */,
+				6E7CF3DD2CBD503B00556C52 /* ChatViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6E7CF3CE2CBD44B700556C52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E7CF3CF2CBD44C400556C52 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6E7CF3D02CBD44CD00556C52 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E7CF3D42CBD459E00556C52 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6E7CF3D12CBD44DD00556C52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				6E7CF3C02CBD432500556C52 /* Assets.xcassets */,
 				6E7CF3C22CBD432500556C52 /* LaunchScreen.storyboard */,
 				6E7CF3C52CBD432500556C52 /* Info.plist */,
 			);
-			path = FlashChat;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E7CF3D42CBD459E00556C52 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6E7CF3D52CBD45D400556C52 /* UIColor+Extensions.swift */,
+				6E7CF3D72CBD45EC00556C52 /* UIStackView+Extensions.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +203,6 @@
 			files = (
 				6E7CF3C12CBD432500556C52 /* Assets.xcassets in Resources */,
 				6E7CF3C42CBD432500556C52 /* Base in Resources */,
-				6E7CF3BF2CBD432400556C52 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +213,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7CF3BC2CBD432400556C52 /* ViewController.swift in Sources */,
+				6E7CF3DC2CBD502A00556C52 /* LoginViewController.swift in Sources */,
+				6E7CF3BC2CBD432400556C52 /* WelcomeViewController.swift in Sources */,
+				6E7CF3DE2CBD503B00556C52 /* ChatViewController.swift in Sources */,
+				6E7CF3D32CBD44FE00556C52 /* VCPreview.swift in Sources */,
+				6E7CF3D82CBD45EC00556C52 /* UIStackView+Extensions.swift in Sources */,
+				6E7CF3DA2CBD4FEA00556C52 /* RegisterViewController.swift in Sources */,
 				6E7CF3B82CBD432400556C52 /* AppDelegate.swift in Sources */,
-				6E7CF3BA2CBD432400556C52 /* SceneDelegate.swift in Sources */,
+				6E7CF3D62CBD45D400556C52 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6E7CF3BD2CBD432400556C52 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E7CF3BE2CBD432400556C52 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6E7CF3C22CBD432500556C52 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +366,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 38NM7VX6QJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlashChat/Info.plist;
+				INFOPLIST_FILE = FlashChat/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,9 +378,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.volgacode.FlashChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,10 +397,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 38NM7VX6QJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlashChat/Info.plist;
+				INFOPLIST_FILE = FlashChat/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,9 +409,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.volgacode.FlashChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
