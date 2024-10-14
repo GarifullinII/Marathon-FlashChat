@@ -87,15 +87,16 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setDelegates() {
-        //        exampleTextField.delegate = self
     }
     
     @objc
     private func registerButtonTapped() {
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     
     @objc
     private func logInButtonTapped() {
+        navigationController?.pushViewController(LoginViewController(), animated: true)
     }
     
     //MARK: - Methods

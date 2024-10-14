@@ -11,6 +11,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var navigationController = UINavigationController()
+    let viewController = WelcomeViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func startApplication() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = WelcomeViewController()
+        self.navigationController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 }
