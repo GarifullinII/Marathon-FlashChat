@@ -31,11 +31,10 @@ class WelcomeViewController: UIViewController {
     
     private let registerButton: UIButton = {
         let b = UIButton(type: .system)
-        b.backgroundColor = .specialLightBrown
+        b.backgroundColor = .specialTurquoise
         b.setTitle("Register", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         b.tintColor = .white
-        b.setImage(UIImage(named: "addWorkout"), for: .normal)
         b.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
@@ -47,7 +46,6 @@ class WelcomeViewController: UIViewController {
         b.setTitle("LogIn", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         b.tintColor = .specialTurquoise
-        b.setImage(UIImage(named: "addWorkout"), for: .normal)
         b.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
