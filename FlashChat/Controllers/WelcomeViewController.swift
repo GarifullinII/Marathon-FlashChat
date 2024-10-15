@@ -11,15 +11,6 @@ import SwiftUI
 class WelcomeViewController: UIViewController {
     
     //MARK: - UI elements
-    private let chatLabel: UILabel = {
-        let l = UILabel()
-        l.text = "FlashChat"
-        l.textColor = .specialTurquoise
-        l.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-    
     lazy var personImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "person.2.circle")
@@ -27,6 +18,15 @@ class WelcomeViewController: UIViewController {
         iv.tintColor = .specialTurquoise
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
+    }()
+    
+    private let chatLabel: UILabel = {
+        let l = UILabel()
+        l.text = "FlashChat"
+        l.textColor = .specialTurquoise
+        l.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
     }()
     
     private let registerButton: UIButton = {
@@ -61,6 +61,7 @@ class WelcomeViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        animationForChatLabel()
     }
     
     //MARK: - Private methods
@@ -100,6 +101,17 @@ class WelcomeViewController: UIViewController {
     }
     
     //MARK: - Methods
+    func animationForChatLabel() {
+        chatLabel.text = ""
+        var chartIndex = 0.0
+        let title = "FlashChat"
+        for letter in title {
+            Timer.scheduledTimer(withTimeInterval: 0.2 * chartIndex, repeats: false) { timer in
+                self.chatLabel.text?.append(letter)
+            }
+            chartIndex += 1
+        }
+    }
 }
 
 //MARK: - Set constraints
