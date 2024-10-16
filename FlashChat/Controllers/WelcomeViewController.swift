@@ -35,7 +35,7 @@ class WelcomeViewController: UIViewController {
         b.setTitle("Register", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         b.tintColor = .white
-        b.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        b.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
     }()
@@ -91,7 +91,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc
-    private func registerButtonTapped() {
+    private func registrationButtonTapped() {
         navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     

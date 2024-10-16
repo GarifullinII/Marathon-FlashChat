@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class LoginViewController: UIViewController {
         t.layer.borderColor = UIColor.specialYellow.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
+        t.autocapitalizationType = .none
         t.clearButtonMode = .always
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
@@ -34,6 +36,8 @@ class LoginViewController: UIViewController {
         t.layer.borderColor = UIColor.specialYellow.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
+        t.autocapitalizationType = .none
+        t.isSecureTextEntry = true
         t.clearButtonMode = .always
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
@@ -58,6 +62,8 @@ class LoginViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     //MARK: - Private methods
@@ -82,6 +88,17 @@ class LoginViewController: UIViewController {
     
     @objc
     private func loginButtonTapped() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+            
+            if let error = error {
+                print(error)
+            } else {
+                self?.navigationController?.pushViewController(ChatViewController(), animated: true)
+            }
+        }
     }
     
     //MARK: - Methods

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class ChatViewController: UIViewController {
     
@@ -43,6 +44,9 @@ class ChatViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        
+        navigationItem.hidesBackButton = true
+        addRightBarButton()
     }
     
     //MARK: - Private methods
@@ -67,7 +71,27 @@ class ChatViewController: UIViewController {
     private func sendButtonTapped() {
     }
     
+    @objc
+    private func logOutButtonTapped() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
     //MARK: - Methods
+    func addRightBarButton() {
+        let rightBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "square.and.arrow.up.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(logOutButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButton
+        rightBarButton.tintColor = .specialBrown
+    }
 }
 
 //MARK: - Set constraints

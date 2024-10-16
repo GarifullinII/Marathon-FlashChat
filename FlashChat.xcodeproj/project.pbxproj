@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E6A34BA2CBEE6460020A389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A34B92CBEE6460020A389 /* GoogleService-Info.plist */; };
+		6E6A34BE2CBF0B640020A389 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6A34BD2CBF0B640020A389 /* FirebaseCore */; };
+		6E6A34C02CBF0B6A0020A389 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6A34BF2CBF0B6A0020A389 /* FirebaseAuth */; };
 		6E7CF3B82CBD432400556C52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3B72CBD432400556C52 /* AppDelegate.swift */; };
 		6E7CF3BC2CBD432400556C52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */; };
 		6E7CF3C12CBD432500556C52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF3C02CBD432500556C52 /* Assets.xcassets */; };
@@ -20,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E6A34B92CBEE6460020A389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E7CF3B42CBD432400556C52 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7CF3B72CBD432400556C52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6A34BE2CBF0B640020A389 /* FirebaseCore in Frameworks */,
+				6E6A34C02CBF0B6A0020A389 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E6A34BC2CBF0B590020A389 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E7CF3AB2CBD432400556C52 = {
 			isa = PBXGroup;
 			children = (
 				6E7CF3B62CBD432400556C52 /* FlashChat */,
 				6E7CF3B52CBD432400556C52 /* Products */,
+				6E6A34BC2CBF0B590020A389 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +144,7 @@
 				6E7CF3C02CBD432500556C52 /* Assets.xcassets */,
 				6E7CF3C22CBD432500556C52 /* LaunchScreen.storyboard */,
 				6E7CF3C52CBD432500556C52 /* Info.plist */,
+				6E6A34B92CBEE6460020A389 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -159,6 +174,10 @@
 			dependencies = (
 			);
 			name = FlashChat;
+			packageProductDependencies = (
+				6E6A34BD2CBF0B640020A389 /* FirebaseCore */,
+				6E6A34BF2CBF0B6A0020A389 /* FirebaseAuth */,
+			);
 			productName = FlashChat;
 			productReference = 6E7CF3B42CBD432400556C52 /* FlashChat.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 6E7CF3AB2CBD432400556C52;
+			packageReferences = (
+				6E6A34BB2CBEEFB70020A389 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 6E7CF3B52CBD432400556C52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +225,7 @@
 			files = (
 				6E7CF3C12CBD432500556C52 /* Assets.xcassets in Resources */,
 				6E7CF3C42CBD432500556C52 /* Base in Resources */,
+				6E6A34BA2CBEE6460020A389 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +464,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E6A34BB2CBEEFB70020A389 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E6A34BD2CBF0B640020A389 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E6A34BB2CBEEFB70020A389 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		6E6A34BF2CBF0B6A0020A389 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E6A34BB2CBEEFB70020A389 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E7CF3AC2CBD432400556C52 /* Project object */;
 }

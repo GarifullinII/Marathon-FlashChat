@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class RegisterViewController: UIViewController {
         t.layer.borderColor = UIColor.specialTurquoise.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
+        t.autocapitalizationType = .none
         t.clearButtonMode = .always
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
@@ -34,6 +36,8 @@ class RegisterViewController: UIViewController {
         t.layer.borderColor = UIColor.specialTurquoise.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
+        t.autocapitalizationType = .none
+        t.isSecureTextEntry = true
         t.clearButtonMode = .always
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
@@ -44,7 +48,7 @@ class RegisterViewController: UIViewController {
         b.setTitle("Register", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         b.tintColor = .specialTurquoise
-        b.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        b.addTarget(self, action: #selector(registrationButtonTapped), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
     }()
@@ -58,6 +62,8 @@ class RegisterViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        
+        self.navigationController?.navigationBar.tintColor = .specialTurquoise
     }
     
     //MARK: - Private methods
@@ -81,7 +87,16 @@ class RegisterViewController: UIViewController {
     }
     
     @objc
-    private func registerButtonTapped() {
+    private func registrationButtonTapped() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                print(error)
+            } else {
+                self.navigationController?.pushViewController(ChatViewController(), animated: true)
+            }
+        }
     }
     
     //MARK: - Methods
