@@ -11,6 +11,14 @@ import FirebaseAuth
 
 class ChatViewController: UIViewController {
     
+    var messages: [Message] = [
+        Message(sender: "a@a.com", body: "Hello"),
+        Message(sender: "q@q.com", body: "Hi"),
+        Message(sender: "q@q.com", body: "What's happend?")
+    ]
+    
+    let idTableViewCell = "idTableViewCell"
+    
     //MARK: - UI elements
     lazy var messageTextField: UITextField = {
         let t = UITextField()
@@ -26,7 +34,7 @@ class ChatViewController: UIViewController {
         return t
     }()
     
-    private let sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let b = UIButton(type: .system)
         b.tintColor = .specialBrown
         b.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
@@ -36,6 +44,15 @@ class ChatViewController: UIViewController {
     }()
     
     var horizontalStackView = UIStackView()
+    
+    private let tableView: UITableView = {
+        let tv = UITableView()
+        tv.backgroundColor = .none
+        tv.separatorStyle = .none
+        tv.bounces = false
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -47,6 +64,8 @@ class ChatViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
         addRightBarButton()
+        
+        tableView.register(ChatTableViewCell.self, forCellReuseIdentifier: idTableViewCell)
     }
     
     //MARK: - Private methods
@@ -61,10 +80,14 @@ class ChatViewController: UIViewController {
             axis: .horizontal,
             spacing: 12)
         view.addSubview(horizontalStackView)
+        
+        view.addSubview(tableView)
     }
     
     private func setDelegates() {
         messageTextField.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @objc
@@ -98,11 +121,14 @@ class ChatViewController: UIViewController {
 extension ChatViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: horizontalStackView.topAnchor),
+            
             horizontalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             horizontalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
             horizontalStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
-            
-            
         ])
     }
 }
@@ -111,11 +137,32 @@ extension ChatViewController {
 extension ChatViewController: UITextFieldDelegate {
 }
 
-//MARK: - ViewControllerPreview
-struct ViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        VCPreview {ChatViewController()}
+//MARK: - UITableViewDataSource
+extension ChatViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as! ChatTableViewCell
+        cell.cellConfigure(messages[indexPath.row].body, messages[indexPath.row].sender)
+        
+        return cell
     }
 }
+
+//MARK: - UITableViewDelegate
+extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+}
+
+////MARK: - ViewControllerPreview
+//struct ViewControllerPreview: PreviewProvider {
+//    static var previews: some View {
+//        VCPreview {ChatViewController()}
+//    }
+//}
 
 

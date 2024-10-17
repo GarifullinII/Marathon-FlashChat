@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
         return t
     }()
     
-    private let registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("LogIn", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
+            guard self != nil else { return }
             
             if let error = error {
                 print(error)

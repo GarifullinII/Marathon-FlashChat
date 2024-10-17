@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
         return t
     }()
     
-    private let registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("Register", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)

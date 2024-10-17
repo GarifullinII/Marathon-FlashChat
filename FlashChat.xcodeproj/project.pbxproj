@@ -10,6 +10,9 @@
 		6E6A34BA2CBEE6460020A389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A34B92CBEE6460020A389 /* GoogleService-Info.plist */; };
 		6E6A34BE2CBF0B640020A389 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6A34BD2CBF0B640020A389 /* FirebaseCore */; };
 		6E6A34C02CBF0B6A0020A389 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6A34BF2CBF0B6A0020A389 /* FirebaseAuth */; };
+		6E75FB362CC114E700ACAB6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75FB352CC114E700ACAB6A /* Constants.swift */; };
+		6E75FB382CC1223F00ACAB6A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75FB372CC1223F00ACAB6A /* Message.swift */; };
+		6E75FB3B2CC17F7900ACAB6A /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75FB3A2CC17F7900ACAB6A /* ChatTableViewCell.swift */; };
 		6E7CF3B82CBD432400556C52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3B72CBD432400556C52 /* AppDelegate.swift */; };
 		6E7CF3BC2CBD432400556C52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */; };
 		6E7CF3C12CBD432500556C52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF3C02CBD432500556C52 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		6E6A34B92CBEE6460020A389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E75FB352CC114E700ACAB6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6E75FB372CC1223F00ACAB6A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		6E75FB3A2CC17F7900ACAB6A /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		6E7CF3B42CBD432400556C52 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7CF3B72CBD432400556C52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E7CF3BB2CBD432400556C52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E75FB392CC17F5400ACAB6A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E75FB3A2CC17F7900ACAB6A /* ChatTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6E7CF3AB2CBD432400556C52 = {
@@ -101,6 +115,7 @@
 		6E7CF3CC2CBD44A200556C52 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6E75FB372CC1223F00ACAB6A /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +134,7 @@
 		6E7CF3CE2CBD44B700556C52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E75FB392CC17F5400ACAB6A /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +149,7 @@
 		6E7CF3D02CBD44CD00556C52 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6E75FB352CC114E700ACAB6A /* Constants.swift */,
 				6E7CF3D42CBD459E00556C52 /* UIKit */,
 			);
 			path = Extensions;
@@ -241,9 +258,12 @@
 				6E7CF3DE2CBD503B00556C52 /* ChatViewController.swift in Sources */,
 				6E7CF3D32CBD44FE00556C52 /* VCPreview.swift in Sources */,
 				6E7CF3D82CBD45EC00556C52 /* UIStackView+Extensions.swift in Sources */,
+				6E75FB3B2CC17F7900ACAB6A /* ChatTableViewCell.swift in Sources */,
 				6E7CF3DA2CBD4FEA00556C52 /* RegisterViewController.swift in Sources */,
 				6E7CF3B82CBD432400556C52 /* AppDelegate.swift in Sources */,
+				6E75FB382CC1223F00ACAB6A /* Message.swift in Sources */,
 				6E7CF3D62CBD45D400556C52 /* UIColor+Extensions.swift in Sources */,
+				6E75FB362CC114E700ACAB6A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

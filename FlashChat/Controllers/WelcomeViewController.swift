@@ -29,7 +29,7 @@ class WelcomeViewController: UIViewController {
         return l
     }()
     
-    private let registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         b.backgroundColor = .specialTurquoise
         b.setTitle("Register", for: .normal)
@@ -40,7 +40,7 @@ class WelcomeViewController: UIViewController {
         return b
     }()
     
-    private let logInButton: UIButton = {
+    lazy var logInButton: UIButton = {
         let b = UIButton(type: .system)
         b.backgroundColor = .specialYellow
         b.setTitle("LogIn", for: .normal)
