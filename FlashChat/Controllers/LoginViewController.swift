@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
         t.borderStyle = .roundedRect
         t.layer.cornerRadius = 10
         t.layer.borderWidth = 2
-        t.layer.borderColor = UIColor.specialYellow.cgColor
+        t.layer.borderColor = UIColor.specialGray.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
         t.autocapitalizationType = .none
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         t.borderStyle = .roundedRect
         t.layer.cornerRadius = 10
         t.layer.borderWidth = 2
-        t.layer.borderColor = UIColor.specialYellow.cgColor
+        t.layer.borderColor = UIColor.specialGray.cgColor
         t.layer.masksToBounds.toggle()
         t.adjustsFontSizeToFitWidth = true
         t.autocapitalizationType = .none

@@ -42,7 +42,7 @@ class WelcomeViewController: UIViewController {
     
     lazy var logInButton: UIButton = {
         let b = UIButton(type: .system)
-        b.backgroundColor = .specialYellow
+        b.backgroundColor = .specialGray
         b.setTitle("LogIn", for: .normal)
         b.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         b.tintColor = .specialTurquoise

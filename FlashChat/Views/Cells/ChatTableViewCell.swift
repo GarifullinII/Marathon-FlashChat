@@ -10,26 +10,38 @@ import UIKit
 class ChatTableViewCell: UITableViewCell {
     
     //MARK: - UI elements
-    private let backgroundCell: UIView = {
+    let backgroundCell: UIView = {
         let v = UIView()
         v.backgroundColor = .none
         v.layer.cornerRadius = 10
         v.layer.borderWidth = 2
-        v.layer.borderColor = UIColor.specialYellow.cgColor
+        v.layer.borderColor = UIColor.specialTurquoise.cgColor
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
-    private let bodyLabel: UILabel = {
+    let bodyLabel: UILabel = {
         let l = UILabel()
         l.text = "Body"
         l.textColor = .specialTurquoise
+        l.numberOfLines = 0
+        l.adjustsFontSizeToFitWidth = true
+        l.minimumScaleFactor = 0.5
         l.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
     
-    private let senderLabel: UILabel = {
+    let senderMyLabel: UILabel = {
+        let l = UILabel()
+        l.text = "Sender"
+        l.textColor = .specialBrown
+        l.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
+    
+    let senderYourLabel: UILabel = {
         let l = UILabel()
         l.text = "Sender"
         l.textColor = .specialTurquoise
@@ -56,7 +68,8 @@ class ChatTableViewCell: UITableViewCell {
         selectionStyle = .none
         addSubview(backgroundCell)
         addSubview(bodyLabel)
-        addSubview(senderLabel)
+        addSubview(senderMyLabel)
+        addSubview(senderYourLabel)
     }
     
     private func setConstraints() {
@@ -67,18 +80,24 @@ class ChatTableViewCell: UITableViewCell {
             backgroundCell.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
             bodyLabel.leadingAnchor.constraint(equalTo: backgroundCell.leadingAnchor, constant: 10),
-            bodyLabel.topAnchor.constraint(equalTo: backgroundCell.topAnchor, constant: 10),
+            bodyLabel.topAnchor.constraint(equalTo: backgroundCell.topAnchor, constant: 4),
             bodyLabel.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10),
-
-            senderLabel.topAnchor.constraint(equalTo: backgroundCell.bottomAnchor, constant: 2),
-            senderLabel.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10),
-            senderLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
+            bodyLabel.bottomAnchor.constraint(equalTo: backgroundCell.bottomAnchor, constant: -4),
+            
+            senderMyLabel.topAnchor.constraint(equalTo: backgroundCell.bottomAnchor, constant: 2),
+            senderMyLabel.trailingAnchor.constraint(equalTo: backgroundCell.trailingAnchor, constant: -10),
+            senderMyLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
+            
+            senderYourLabel.topAnchor.constraint(equalTo: backgroundCell.bottomAnchor, constant: 2),
+            senderYourLabel.leadingAnchor.constraint(equalTo: backgroundCell.leadingAnchor, constant: 10),
+            senderYourLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2),
         ])
     }
     
     //MARK: - Methods
     func cellConfigure(_ body: String, _ sender: String) {
-            bodyLabel.text =  body
-            senderLabel.text = sender
+        bodyLabel.text =  body
+        senderMyLabel.text = sender
+        senderYourLabel.text = sender
     }
 }
